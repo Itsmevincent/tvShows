@@ -1,0 +1,76 @@
+<div class="container dasboard-content">
+    <div class="row" *ngIf="showPopularList">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-bt ">
+            <label class="show-heading">
+                <h2>Popular</h2>
+            </label>
+
+            <label class="show-heading" *ngIf="showPopularList.length == 0">
+                <h5 class="no-record"> {{recordMessage}} </h5>
+            </label>
+
+            <span class="shows-panel" *ngFor="let showPopular of showPopularList.slice(0,6); ">
+                <img src="{{showPopular.image.medium}}" (click)="showBtn(showPopular.id);" class="show-image" alt="...">
+                <span class="rating-icons"><i class="bi bi-star"></i> {{showPopular.rating.average | number :
+                    '.1'}}</span>
+            </span>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="showActionList">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-bt">
+            <label class="show-heading">
+                <h2>Action</h2>
+            </label>
+
+            <label class="show-heading" *ngIf="showActionList.length == 0">
+                <h5 class="no-record"> {{recordMessage}} </h5>
+            </label>
+
+            <span class="shows-panel" *ngFor="let showAction of showActionList.slice(0,6); ">
+                <img src="{{showAction.image.medium}}" (click)="showBtn(showAction.id);" class="show-image" alt="...">
+                <span class="rating-icons"><i class="bi bi-star"></i> {{showAction.rating.average | number :
+                    '.1'}}</span>
+            </span>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="showComdeyList">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-bt">
+            <label class="show-heading">
+                <h2>Comdey</h2>
+            </label>
+
+            <label class="show-heading" *ngIf="showComdeyList.length == 0">
+                <h5 class="no-record"> {{recordMessage}} </h5>
+            </label>
+
+            <span class="shows-panel" *ngFor="let showComdey of showComdeyList.slice(0,6); ">
+                <img src="{{showComdey.image.medium}}" (click)="showBtn(showComdey.id);" class="show-image" alt="...">
+                <span class="rating-icons"><i class="bi bi-star"></i> {{showComdey.rating.average | number :
+                    '.1'}}</span>
+            </span>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="showDramaList">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-bt">
+            <label class="show-heading">
+                <h2>Drama</h2>
+            </label>
+
+            <label class="show-heading" *ngIf="showDramaList.length == 0">
+                <h5 class="no-record"> {{recordMessage}} </h5>
+            </label>
+
+            <span class="shows-panel" *ngFor="let showDrama of showDramaList.slice(0,6); ">
+                <img src="{{showDrama.image.medium}}" (click)="showBtn(showDrama.id);" class="show-image" alt="...">
+                <span class="rating-icons"><i class="bi bi-star"></i> {{showDrama.rating.average | number :
+                    '.1'}}</span>
+            </span>
+        </div>
+    </div>
+
+</div>
+
+<return-top></return-top>

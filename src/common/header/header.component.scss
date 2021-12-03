@@ -1,0 +1,72 @@
+.toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #1976d2;
+  color: white;
+  font-weight: 600;
+}
+
+.toolbar img {
+  margin: 0 16px;
+}
+
+.toolbar #twitter-logo {
+  height: 40px;
+  margin: 0 8px;
+}
+
+.toolbar #youtube-logo {
+  height: 40px;
+  margin: 0 16px;
+}
+
+.toolbar #twitter-logo:hover,
+.toolbar #youtube-logo:hover {
+  opacity: 0.8;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.tv-logo {
+  border-radius: 50%;
+  inline-size: 50px;
+  cursor: pointer;
+}
+
+i {
+  background-color: transparent !important;
+  color: white !important;
+  height: 40px;
+}
+
+.bi::before {
+  font-size: 20px !important;
+}
+
+.input-group {
+  width: 200px !important;
+  margin-right: 20px;
+}
+
+.btn {
+  background-color: #6aadf0 !important;
+  border-color: white !important;
+  border-radius: unset !important;
+  border-top-right-radius: 0.25rem !important;
+  border-bottom-right-radius: 0.25rem !important;
+  width: 40px !important;
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+  .input-group {
+    width: 175px !important;
+  }
+}

@@ -1,0 +1,27 @@
+<div class="container search-content">
+    <div class="row" *ngIf="searchList.length > 0">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-bt">
+            <label class="search-heading">
+                <h2>{{searchTitle}}</h2>
+            </label>
+            <span *ngFor="let search of searchList ">
+                <span class="search-panel" *ngIf="search.show.image">
+                    <img src="{{search.show.image.medium}}" (click)="showDetailsBtn(search.show.id)"
+                        class="search-image" alt="...">
+                    <span class="rating-icons"><i class="bi bi-star"></i> {{search.show.rating.average | number :
+                        '.1'}}</span>
+                </span>
+            </span>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="searchList.length == 0">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-bt">
+            <label class="search-heading">
+                <h5 class="no-record">No record</h5>
+            </label>
+        </div>
+    </div>
+</div>
+
+<return-top></return-top>

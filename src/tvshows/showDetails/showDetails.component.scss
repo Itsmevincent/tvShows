@@ -1,0 +1,83 @@
+.show-detail-content {
+    display: flex;
+    margin: 82px auto 32px;
+    padding: 0 16px;
+    flex-direction: column;
+}
+
+.margin-bt {
+    margin-bottom: 20px;
+}
+
+.show-detail-heading {
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    box-shadow: #b5dbf8 0px 3px 8px;
+    background: #d7f4ff;
+    margin: auto;
+}
+
+.column-Shows {
+    width: 50%;
+    box-shadow: #b5dbf8 0px 3px 8px;
+    background: #d7f4ff;
+    margin: auto;
+    text-align: center;
+}
+
+.rating-icons {
+    position: relative;
+    bottom: 25px;
+    left: 95px;
+    background-color: red;
+    color: white;
+    border-radius: 0.24rem;
+}
+.show-detail-panel {
+    display: inline-block;
+    width: 180px !important;
+}
+
+.show-detail-image {
+    margin-right: 10px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+
+.algin-image {
+    text-align: center;
+    width: 100%;
+}
+.algin-summary {
+    position: relative;
+    top: 25px;
+}
+
+.align-cast-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.casting-panel {
+    width: 150px !important;
+    text-align: center;
+}
+.cast-name {
+    vertical-align: middle;
+}
+
+.cast-panel {
+    margin-right: 15px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.algin-cast-center {
+    text-align: center;
+}

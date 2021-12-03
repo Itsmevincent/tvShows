@@ -1,0 +1,77 @@
+<div class="container show-detail-content" >
+    <div class="row" *ngIf="this.showdetails">
+        <div class="margin-bt col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <label class="show-detail-heading">
+                <h2>{{showDetailsTitle}}</h2>
+            </label>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 algin-image">
+                <span class="show-detail-panel" *ngIf="showdetails.image">
+                    <img src="{{showdetails.image.medium}}" class="show-detail-image" alt="...">
+                    <span class="rating-icons"><i class="bi bi-star"></i> {{showdetails.rating.average | number :
+                        '.1'}}</span>
+                </span>
+            </div>
+        </div>
+        <div class="margin-bt col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <label class="show-detail-heading">
+                <h2>Show Info </h2>
+            </label>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 " style="width:100%">
+                <table>
+                    <tr>
+                        <td><b>Genres</b></td>
+                        <td>{{genres}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Show Time</b></td>
+                        <td>
+                            <span *ngIf="showdetails.schedule">{{showdetails.schedule.days[0]}} at {{showdetails.time}}
+                                ({{showdetails.runtime}} min) </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>Status</b></td>
+                        <td>{{showdetails.status}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Language</b></td>
+                        <td>{{showdetails.language}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Show Type</b></td>
+                        <td>{{showdetails.type}}</td>
+                    </tr>
+                </table>
+
+                <span class="algin-summary" [innerHTML]="showdetails.summary"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="this.showdetails == ''">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-bt">
+            <label class="show-detail-heading">
+                <h5 class="no-record">No record</h5>
+            </label>
+        </div>
+    </div>
+</div>
+
+<div class="container search-content" >
+    <div class="row" *ngIf="castDetails.length > 0">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-bt algin-cast-center">
+            <label class="show-detail-heading">
+                <h2>{{castTitle}}</h2>
+            </label>
+            <span *ngFor="let cast of castDetails">
+                <span class="show-detail-panel cast-panel" *ngIf="cast.character.image">
+                    <img src="{{cast.character.image.medium}}" class="show-detail-image align-cast-image" alt="...">
+                    <span class="cast-name"> <b>{{cast.person.name}}</b> </span>
+                </span>
+
+            </span>
+        </div>
+    </div>
+</div>
+
+<return-top></return-top>

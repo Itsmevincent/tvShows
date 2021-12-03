@@ -1,0 +1,15 @@
+<div class="toolbar col-lg-12 col-md-12 col-sm-12">
+  <img class="tv-logo" alt="Tv Logo" src="../../assets/img/tv-icons.png" (click)="headerBtn()" title="Home" />
+  <span>{{headerTitle}}</span>
+  <div class="spacer"></div>
+
+  <div class="input-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+    <input type="text" class="form-control" [(ngModel)]="searchShows" placeholder="Search shows..."
+      aria-label="Search for a Meal">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="button" (click)="searchBtn();" title="Click to search">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </div>
+</div>
