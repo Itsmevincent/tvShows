@@ -1,0 +1,9 @@
+<span class="shows-panel">
+    <img *ngIf="shows.image" src="{{shows.image.medium}}" (click)="showBtn(shows.id);" class="show-image" alt="...">
+    <img *ngIf="!shows.image" src="../../assets/img/no-image-placeholder.png" (click)="showBtn(shows.id);"
+        class="show-image" style="height: 246px;" alt="...">
+    <span class="rating-icons"><i class="bi bi-star"></i> 
+        <span class="rating-algin" *ngIf="shows.rating.average">{{shows.rating.average | number :'0.1'}}</span>
+        <span class="rating-algin" *ngIf="!shows.rating.average">0.0</span>
+    </span>
+</span>

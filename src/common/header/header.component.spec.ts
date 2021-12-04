@@ -21,10 +21,10 @@ describe('HeaderComponent', () => {
         expect(header).toBeTruthy();
     });
 
-    it(`should have as title 'TV Shows'`, () => {
+    it(`should have as title 'Shows'`, () => {
         const fixture = TestBed.createComponent(HeaderComponent);
         const header = fixture.debugElement.componentInstance;
-        expect(header.headerTitle).toEqual('TV Shows');
+        expect(header.headerTitle).toEqual('Shows');
     });
 
     it('should set image logo path as expected', () => {

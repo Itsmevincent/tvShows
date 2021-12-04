@@ -10,7 +10,7 @@ describe('SearchComponent', () => {
       imports: [
         RouterTestingModule,
         HttpClientTestingModule
-        
+
       ],
       declarations: [
         SearchComponent
@@ -35,11 +35,11 @@ describe('SearchComponent', () => {
   it('should be created Service', () => {
     const service: TvShowsService = TestBed.get(TvShowsService);
     expect(service).toBeTruthy();
-   });
+  });
 
-   it('should have getShowSearch function', () => {
+  it('should have getShowSearch function', () => {
     const service: TvShowsService = TestBed.get(TvShowsService);
     expect(service.getShowSearch("girls")).toBeTruthy();
-   });
+  });
 
 });

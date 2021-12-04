@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TvShowsService } from '../tvshows.service';
 import { Router } from '@angular/router';
 
@@ -8,40 +8,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard.component.scss']
 })
 
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
   title = 'Dashboard';
   recordMessage = "No record";
-  showActionList: any = [];
-  showComdeyList: any = [];
-  showDramaList: any = [];
-  showPopularList: any = [];
+  showLists: any = [];
+  totalGenresList: any = [];
 
-  constructor(private tvShowsService: TvShowsService, private router: Router) {
+  constructor(private tvShowsService: TvShowsService,) { }
+
+  ngOnInit() {
     this.tvShowsService.getAllShows().subscribe((res: any) => {
-      res.forEach((item: any) => {
-        if (item.rating.average) {
-          this.showPopularList.push(item);
-          if (item.genres.length > 0) {
-            for (let genres of item.genres) {
-              switch (genres) {
-                case 'Action': return this.showActionList.push(item);
-                case 'Comedy': return this.showComdeyList.push(item);
-                case 'Drama': return this.showDramaList.push(item);
-              }
-            }
-          }
-        }
+      this.showLists = res.sort((a: any, b: any) => b.rating.average - a.rating.average);
+      this.showLists.forEach((item: any) => {
+        this.totalGenresList = [...this.totalGenresList, ...item.genres];
       });
-      this.showPopularList.sort((a: any, b: any) => b.rating.average - a.rating.average);
-      this.showActionList.sort((a: any, b: any) => b.rating.average - a.rating.average);
-      this.showComdeyList.sort((a: any, b: any) => b.rating.average - a.rating.average);
-      this.showDramaList.sort((a: any, b: any) => b.rating.average - a.rating.average);
+      this.totalGenresList = [...new Set(this.totalGenresList)].sort();
     });
-  }
-
-  showBtn(showId: any) {
-    if (showId) {
-      this.router.navigate(['tvshows-showdetails', showId]);
-    }
   }
 }

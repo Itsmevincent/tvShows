@@ -17,8 +17,8 @@
 
 table {
     width: 100%;
-    box-shadow: #b5dbf8 0px 3px 8px;
-    background: #d7f4ff;
+    // box-shadow: #b5dbf8 0px 3px 8px;
+    // background: #d7f4ff;
     margin: auto;
 }
 
@@ -58,8 +58,8 @@ table {
 }
 
 .align-cast-image {
-    width: 180px;
-    height: 180px;
+    inline-size: 150px;
+    height: 150px;
     border-radius: 50%;
     margin-right: 15px;
 }
@@ -78,6 +78,33 @@ table {
     margin-bottom: 15px;
 }
 
+i{
+    padding-left: 2px;
+}
+
+.rating-algin{
+  padding: 0px 2px 0px 4px;
+}
+
+
 .algin-cast-center {
     text-align: center;
 }
+
+.show-info{
+    width:100%;
+    margin-top: 20px;
+}
+
+.no-image{
+    width: 210px;
+    height: 250px;
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+    .align-cast-image , .cast-panel  {
+        margin-right: 0px !important;
+  }
+}
+  

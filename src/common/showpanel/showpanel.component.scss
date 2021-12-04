@@ -1,0 +1,47 @@
+.show-image {
+    cursor: pointer;
+    inline-size: 175px;
+    margin-right: 10px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+  }
+
+  .rating-icons {
+    position: relative;
+    bottom: 25px;
+    left: 125px;
+    background-color: red;
+    color: white;
+    border-radius: 0.24rem;
+  }
+  .shows-panel {
+    display: inline-block;
+    width: 184px !important;
+  }
+
+  i{
+      padding-left: 2px;
+  }
+
+  .rating-algin{
+    padding: 0px 2px 0px 4px;
+  }
+
+  /* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+    
+    .rating-icons {
+      left: 60px !important;
+    }
+    .show-image {
+        margin-right: 0px;
+    }
+  }
+  
+  /* Small Devices, Tablets */
+  @media only screen and (max-width: 768px) {
+    
+    .rating-icons {
+      left: 55px;
+    }
+  }
+  

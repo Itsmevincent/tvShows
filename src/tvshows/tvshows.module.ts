@@ -6,13 +6,18 @@ import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './search/search.component';
 import { ShowDetailsComponent } from './showDetails/showDetails.component';
 import { ReturnTopComponent } from '../common/returntop/returntop.component';
+import { MyFilterPipe } from '../common/filter/filter.pipe';
+import { ShowPanelComponent } from 'src/common/showpanel/showpanel.component';
 
 @NgModule({
   declarations: [
     DashboardComponent,
     SearchComponent,
     ShowDetailsComponent,
-    ReturnTopComponent
+    ReturnTopComponent,
+    MyFilterPipe,
+    ShowPanelComponent
+    
   ],
   imports: [CommonModule, FormsModule],
   providers: [TvShowsService]

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TvShowsService } from '../tvshows.service';
 
@@ -7,25 +7,25 @@ import { TvShowsService } from '../tvshows.service';
     templateUrl: './showDetails.component.html',
     styleUrls: ['./showDetails.component.scss']
 })
-export class ShowDetailsComponent {
-    showDetailsTitle = 'Show Details';
-    
-    castTitle: any = ""
+export class ShowDetailsComponent implements OnInit {
+    showDetailsTitle = 'Show Info';
+    castTitle: any = 'Cast';
     showdetails: any = "";
     genres: any = "";
     showId: any = this.route.snapshot.paramMap.get('id');;
     castDetails: any = [];
 
-    constructor(private tvShowsService: TvShowsService, private route: ActivatedRoute) {
+    constructor(private tvShowsService: TvShowsService, private route: ActivatedRoute) {}
+         
+    ngOnInit(){
         if (this.showId) {
             this.tvShowsService.getShowById(this.showId).subscribe((showResult: any) => {
                 this.showdetails = showResult;
-                this.genres = showResult.genres.toString().replace(/,/g, ' | ');
+                this.genres = showResult.genres.join(' | ');
                 this.getCastDetails();
             });
         }
     }
-
     getCastDetails() {
         this.tvShowsService.getShowCast(this.showId).subscribe((castResult: any) => {
             castResult.forEach((castItem: any) => {
@@ -33,9 +33,6 @@ export class ShowDetailsComponent {
                     this.castDetails.push(castItem);
                 }
             });
-            if (this.castDetails.length > 0) {
-                this.castTitle = "Cast";
-            }
         });
     }
 }

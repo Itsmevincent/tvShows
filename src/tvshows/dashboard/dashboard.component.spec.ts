@@ -19,7 +19,6 @@ describe('DashboardComponent', () => {
     }).compileComponents();
   });
 
-
   it('should create the dashboard component', () => {
     const fixture = TestBed.createComponent(DashboardComponent);
     const dashboard = fixture.debugElement.componentInstance;

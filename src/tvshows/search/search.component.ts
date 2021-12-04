@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TvShowsService } from '../tvshows.service';
 
@@ -7,20 +7,20 @@ import { TvShowsService } from '../tvshows.service';
     templateUrl: './search.component.html',
     styleUrls: ['./search.component.scss']
 })
-export class SearchComponent {
+export class SearchComponent implements OnInit {
     searchTitle = "Search Shows";
     searchList: any = [];
     showName: any = this.route.snapshot.paramMap.get('showName');
 
-    constructor(private tvShowsService: TvShowsService, private route: ActivatedRoute, private router: Router) {
+    constructor(private tvShowsService: TvShowsService,
+        private route: ActivatedRoute, private router: Router) {}
+
+    ngOnInit() {
         this.router.routeReuseStrategy.shouldReuseRoute = () => false;
         if (this.showName) {
             this.tvShowsService.getShowSearch(this.showName).subscribe((searchResult: any) => {
                 searchResult.forEach((item: any) => {
                     if (item.show.status != "In Development") {
-                        if (!item.show.rating.average) {
-                            item.show.rating.average = 0.0;
-                        }
                         this.searchList.push(item);
                     }
                 });
@@ -29,9 +29,4 @@ export class SearchComponent {
         }
     }
 
-    showDetailsBtn(showId: any) {
-        if (showId) {
-            this.router.navigate(['tvshows-showdetails', showId]);
-        }
-    }
 }

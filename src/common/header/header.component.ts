@@ -7,13 +7,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  headerTitle = "TV Shows";
+  headerTitle = "Shows";
   searchShows: any = "";
   pathUrl: any = "";
 
   constructor(private router: Router) { }
   searchBtn() {
-    if (this.searchShows) {
+    if (this.searchShows && this.searchShows !=" ") {
       this.router.navigate(['tvshows-search', this.searchShows]);
     }
   }

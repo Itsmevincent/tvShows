@@ -5,12 +5,7 @@
                 <h2>{{searchTitle}}</h2>
             </label>
             <span *ngFor="let search of searchList ">
-                <span class="search-panel" *ngIf="search.show.image">
-                    <img src="{{search.show.image.medium}}" (click)="showDetailsBtn(search.show.id)"
-                        class="search-image" alt="...">
-                    <span class="rating-icons"><i class="bi bi-star"></i> {{search.show.rating.average | number :
-                        '.1'}}</span>
-                </span>
+                <show-panel [shows]="search.show"></show-panel>
             </span>
         </div>
     </div>

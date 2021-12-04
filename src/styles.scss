@@ -1,9 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
-@import 'variables';
-@import '../node_modules/bootstrap/scss/bootstrap';
+@import "variables";
+@import "../node_modules/bootstrap/scss/bootstrap";
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 
-.no-record{
+.no-record {
     background-color: #6aadf0;
     padding-bottom: 10px;
     padding-top: 10px;
