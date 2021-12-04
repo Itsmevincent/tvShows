@@ -26,10 +26,10 @@ describe('ShowDetailsComponent', () => {
     expect(showDetails).toBeTruthy();
   });
 
-  it(`should have as title 'Show Details'`, () => {
+  it(`should have as title 'Show Info'`, () => {
     const fixture = TestBed.createComponent(ShowDetailsComponent);
     const showDetails = fixture.debugElement.componentInstance;
-    expect(showDetails.showDetailsTitle).toEqual('Show Details');
+    expect(showDetails.showDetailsTitle).toEqual('Show Info');
   });
 
   it('should be created Service', () => {
