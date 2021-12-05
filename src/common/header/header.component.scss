@@ -64,6 +64,10 @@ i {
   width: 40px !important;
 }
 
+.divider-panel{
+  flex: auto;
+}
+
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 480px) {
   .input-group {
