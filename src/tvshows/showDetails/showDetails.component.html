@@ -12,8 +12,8 @@
                         class="show-detail-image no-image" alt="...">
                     <span class="rating-icons"><i class="bi bi-star"></i>
                         <span class="show-info">
-                            <span
-                                *ngIf="showdetails.rating.average">{{ showdetails.rating.average | number : '0.1'}}</span>
+                            <span *ngIf="showdetails.rating.average">{{ showdetails.rating.average | number :
+                                '0.1'}}</span>
                             <span *ngIf="!showdetails.rating.average">0.0</span>
                         </span> </span>
                 </span>
@@ -47,7 +47,8 @@
                     </tr>
                 </table>
 
-                <p class="algin-summary"><b>Summary:</b><span [innerHTML]="showdetails.summary"></span></p>
+                <p class="algin-summary"><b>Summary:</b><span *ngIf="!showdetails.summary"> No summary</span><span
+                        *ngIf="showdetails.summary" [innerHTML]="showdetails.summary"></span></p>
             </div>
         </div>
     </div>

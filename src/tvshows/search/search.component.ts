@@ -19,11 +19,7 @@ export class SearchComponent implements OnInit {
         this.router.routeReuseStrategy.shouldReuseRoute = () => false;
         if (this.showName) {
             this.tvShowsService.getShowSearch(this.showName).subscribe((searchResult: any) => {
-                searchResult.forEach((item: any) => {
-                    if (item.show.status != "In Development") {
-                        this.searchList.push(item);
-                    }
-                });
+                this.searchList = searchResult;
                 this.searchList.sort((a: any, b: any) => b.show.rating.average - a.show.rating.average);
             });
         }
