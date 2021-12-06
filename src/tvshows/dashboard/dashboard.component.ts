@@ -14,7 +14,7 @@ export class DashboardComponent implements OnInit {
   showLists: any = [];
   totalGenresList: any = [];
 
-  constructor(private tvShowsService: TvShowsService,) { }
+  constructor(private tvShowsService: TvShowsService) { }
 
   ngOnInit() {
     this.tvShowsService.getAllShows().subscribe((res: any) => {
