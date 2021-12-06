@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,13 +6,11 @@ import { Router } from '@angular/router';
     templateUrl: './showpanel.component.html',
     styleUrls: ['./showpanel.component.scss']
 })
-export class ShowPanelComponent implements OnInit {
+export class ShowPanelComponent {
     @Input() shows: any;
 
     constructor(private router: Router) { }
-
-    ngOnInit() {}
-
+    /* Navigating to search detail page */
     showBtn(showId: any) {
         if (showId) {
           this.router.navigate(['tvshows-showdetails', showId]);

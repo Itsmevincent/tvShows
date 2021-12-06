@@ -19,6 +19,7 @@ export class ShowDetailsComponent implements OnInit {
          
     ngOnInit(){
         if (this.showId) {
+            /* Getting show details API by show Id  */
             this.tvShowsService.getShowById(this.showId).subscribe((showResult: any) => {
                 this.showdetails = showResult;
                 this.genres = showResult.genres.join(' | ');
@@ -26,6 +27,8 @@ export class ShowDetailsComponent implements OnInit {
             });
         }
     }
+
+    /* Getting the Cast details API by show Id */
     getCastDetails() {
         this.tvShowsService.getShowCast(this.showId).subscribe((castResult: any) => {
             castResult.forEach((castItem: any) => {

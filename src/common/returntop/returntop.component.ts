@@ -12,7 +12,7 @@ export class ReturnTopComponent implements OnInit {
     ngOnInit() {
         this.scrollFunction();
     }
-
+    /* When user scrolls it display the return to top button */
     scrollFunction() {
         let mybutton = document.getElementById('myBtn') as HTMLElement;
         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -22,7 +22,7 @@ export class ReturnTopComponent implements OnInit {
         }
     }
 
-    // When the user clicks on the button, scroll to the top of the document
+    /* When the user clicks on the button, scroll to the top of the document */
     topFunction() {
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;

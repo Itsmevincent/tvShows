@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { TvShowsService } from '../tvshows.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'dashboard',
@@ -17,6 +16,7 @@ export class DashboardComponent implements OnInit {
   constructor(private tvShowsService: TvShowsService) { }
 
   ngOnInit() {
+    /* Getting all the show details*/
     this.tvShowsService.getAllShows().subscribe((res: any) => {
       this.showLists = res.sort((a: any, b: any) => b.rating.average - a.rating.average);
       this.showLists.forEach((item: any) => {

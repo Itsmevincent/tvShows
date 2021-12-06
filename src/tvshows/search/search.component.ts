@@ -18,6 +18,7 @@ export class SearchComponent implements OnInit {
     ngOnInit() {
         this.router.routeReuseStrategy.shouldReuseRoute = () => false;
         if (this.showName) {
+            /* Searching the series based on show name */
             this.tvShowsService.getShowSearch(this.showName).subscribe((searchResult: any) => {
                 this.searchList = searchResult;
                 this.searchList.sort((a: any, b: any) => b.show.rating.average - a.show.rating.average);

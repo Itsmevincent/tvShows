@@ -9,6 +9,6 @@ export class FilterPipe implements PipeTransform {
         if (!items || !filter) {
             return items;
         }
-        return items.filter(item => item.genres.indexOf(filter) !== -1).slice(0,6);
+        return items.filter(item => item.genres.indexOf(filter) !== -1).slice(0, 6);
     }
 }
